@@ -51,5 +51,5 @@ QMAKE_CXXFLAGS += -fPIC -fvisibility=hidden -fvisibility-inlines-hidden
 QMAKE_LFLAGS += -pie -rdynamic
 
 # share ui setup
-CONFIG += share-widget share-ui-plugin share-ui-common link_pkgconfig
-PKGCONFIG += share-widget share-ui-plugin share-ui-common
+CONFIG += share-widget share-ui-plugin share-ui-common mdatauri link_pkgconfig
+PKGCONFIG += share-widget share-ui-plugin share-ui-common mdatauri
