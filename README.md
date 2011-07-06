@@ -11,4 +11,10 @@ This API is not exposed in Nokia's Harmattan QML Components, but rather in the u
 
 http://meego.gitorious.org/meego-sharing-framework
 
-So far I am totally stuck on linking MeeGo's ShareUI from a Harmattan Qt/QML project.
+So far I am totally stuck on linking MeeGo's ShareUI from a Harmattan Qt/QML project. Also I have open forum posts on
+
+http://www.developer.nokia.com/Community/Discussion/showthread.php?226370-Accessing-ShareUI-on-Harmattan-MeeGo
+
+and
+
+http://forum.meego.com/showthread.php?t=3768
