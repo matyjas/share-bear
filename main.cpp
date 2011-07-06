@@ -1,6 +1,5 @@
 #include <QtGui/QApplication>
 #include <QtDeclarative>
-#include <ShareUI/Item>
 
 int main(int argc, char *argv[])
 {

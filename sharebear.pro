@@ -22,7 +22,8 @@ symbian:TARGET.CAPABILITY += NetworkServices
 # MOBILITY +=
 
 # The .cpp file which was generated for your project. Feel free to hack it.
-SOURCES += main.cpp
+SOURCES += main.cpp \
+    sharecommand.cpp
 
 
 OTHER_FILES += \
@@ -51,6 +52,9 @@ QMAKE_CXXFLAGS += -fPIC -fvisibility=hidden -fvisibility-inlines-hidden
 QMAKE_LFLAGS += -pie -rdynamic
 
 # share ui setup
-CONFIG += share-widgets share-ui-plugin share-ui-common mdatauri link_pkgconfig
+CONFIG += link_pkgconfig
+# share-widgets share-ui-plugin share-ui-common mdatauri
 PKGCONFIG += share-widgets share-ui-plugin share-ui-common mdatauri
 
+HEADERS += \
+    sharecommand.h
