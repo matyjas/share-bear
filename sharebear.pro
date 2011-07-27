@@ -17,7 +17,7 @@ symbian:TARGET.UID3 = 0xE6BF7CC8
 symbian:TARGET.CAPABILITY += NetworkServices
 
 # If your application uses the Qt Mobility libraries, uncomment the following
-# lines and add the respective components to the MOBILITY variable.
+# lines and add the respective components#include <QtDeclarative/QDeclarativeContext> to the MOBILITY variable.
 # CONFIG += mobility
 # MOBILITY +=
 
@@ -26,7 +26,7 @@ SOURCES += main.cpp \
     sharecommand.cpp
 
 
-OTHER_FILES += \
+OTHER_FILES += \#include <QtDeclarative/QDeclarativeContext>
     qml/MainPage.qml \
     qml/main.qml \
     sharebear.desktop \
@@ -52,9 +52,7 @@ QMAKE_CXXFLAGS += -fPIC -fvisibility=hidden -fvisibility-inlines-hidden
 QMAKE_LFLAGS += -pie -rdynamic
 
 # share ui setup
-CONFIG += link_pkgconfig
-# share-widgets share-ui-plugin share-ui-common mdatauri
-PKGCONFIG += share-widgets share-ui-plugin share-ui-common mdatauri
+CONFIG += shareuiinterface-maemo-meegotouch share-ui-plugin share-ui-common mdatauri
 
 HEADERS += \
     sharecommand.h

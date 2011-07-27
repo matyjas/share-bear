@@ -1,10 +1,18 @@
 #ifndef SHARECOMMAND_H
 #define SHARECOMMAND_H
 
-class ShareCommand
+#include <QObject>
+
+class ShareCommand: public QObject
 {
+    Q_OBJECT
 public:
-    ShareCommand();
+    explicit ShareCommand(QObject *parent = 0);
+
+signals:
+
+public slots:
+
     void share();
 };
 

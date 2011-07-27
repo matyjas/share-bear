@@ -3,11 +3,9 @@
 #include <QString>
 #include <QDebug>
 #include <MDataUri>
-#include <ShareUI/ShareUiInterface>
+#include <maemo-meegotouch-interfaces/shareuiinterface.h>
 
-ShareCommand::ShareCommand()
-{
-}
+ShareCommand::ShareCommand(QObject *parent) : QObject(parent) { }
 
 void ShareCommand::share () {
 
@@ -17,11 +15,10 @@ void ShareCommand::share () {
 
     QString desc = "Support for Nokia Developers";
 
-
-
-    qDebug() << "Make data URI from" << link << title << desc;
-
-
+    /*
+    qDebug() << "Make data URI from"
+             << link << title << desc;
+*/
 
     MDataUri duri;
 
@@ -33,41 +30,28 @@ void ShareCommand::share () {
 
     duri.setAttribute ("description", desc);
 
-
-
     if (duri.isValid() == false) {
 
         qCritical() << "Invalid URI";
 
         return;
-
     }
-
-
 
     QStringList items;
 
     items << duri.toString();
 
-    qDebug() << "URI:" << items.join (" ");
-
-
+    //qDebug() << "URI:" << items.join (" ");
 
     // Create a interface object
+    ShareUiInterface shareIf("com.nokia.ShareUi");
 
-    qDebug() << "Connecting to service" << SHAREUI_DBUS_SERVICE;
-
-    ShareUiInterface shareIf(SHAREUI_DBUS_SERVICE, "/", QDBusConnection::sessionBus());
-
-
-
-    // You can check if interface is valid
-
+    // Check if interface is valid
     if (shareIf.isValid()) {
 
         // Start ShareUI application with selected files.
 
-        qDebug() << "Signalling share-ui daemon...";
+        //qDebug() << "Signalling share-ui daemon...";
 
         shareIf.share (items);
 
@@ -76,7 +60,5 @@ void ShareCommand::share () {
         qCritical() << "Invalid interface";
 
         return;
-
     }
-
 }

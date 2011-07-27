@@ -1,5 +1,6 @@
 import QtQuick 1.1
 import com.meego 1.0
+import ShareCommand 1.0
 
 Page {
     id: mainPage
@@ -15,6 +16,14 @@ Page {
         anchors.top: label.bottom
         anchors.topMargin: 10
         text: qsTr("Click here!")
-        onClicked: label.visible=true
+        onClicked: {
+
+            label.visible=true
+            sharer.share()
+        }
+    }
+    ShareCommand {
+
+        id: sharer
     }
 }
